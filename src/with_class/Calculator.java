@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
-    private ArrayList<Double> calculationResults = new ArrayList<>();
+    private ArrayList<Double> resultHistory = new ArrayList<>();
+
 
     public double operate(char operator, int num1, int num2) {
         double answer = 0;
@@ -19,21 +20,24 @@ public class Calculator {
             answer = (double) num1 / num2;
         }
 
-        calculationResults.add(answer);
+        resultHistory.add(answer);
         return answer;
     }
 
     public ArrayList<Double> getCalculationResults() {
-        return calculationResults;
+        /* 연산 결과 리스트 반환 */
+        return resultHistory;
     }
 
-    public void setCalculationResults(ArrayList<Double> calculationResults) {
-        this.calculationResults = calculationResults;
+    public void setCalculationResults(ArrayList<Double> resultHistory) {
+        /* 연산 결과 리스트 수정 */
+        this.resultHistory = resultHistory;
     }
 
     public boolean removeFirstResult() {
-        if (!calculationResults.isEmpty()) {
-            calculationResults.remove(0);
+        /* 연산 결과 리스트에서 첫 번째 연산 결과 제거 */
+        if (!resultHistory.isEmpty()) {
+            resultHistory.remove(0);
             return true;
         } else {
             return false;
