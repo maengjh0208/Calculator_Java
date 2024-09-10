@@ -60,18 +60,13 @@ public class App {
     }
 
     public char validateChar(BufferedReader reader) throws Exception {
-        try {
-            System.out.print("사칙연산 기호(+, -, *, /) 입력: ");
-            char operator = reader.readLine().charAt(0);
+        System.out.print("사칙연산 기호(+, -, *, /) 입력: ");
+        char operator = reader.readLine().charAt(0);
 
-            if (!(operator == '+' || operator == '-' || operator == '*' || operator == '/')) {
-                throw new IllegalArgumentException("[ERROR] 사칙연산 기호는 +, -, *, / 중 하나를 입력해야 합니다.");
-            }
-
-            return operator;
-
-        } catch (InputMismatchException e) {
-            throw new InputMismatchException("[ERROR] 맞지 않는 형식으로 입력했습니다. (char type 입력 필요)");
+        if (!(operator == '+' || operator == '-' || operator == '*' || operator == '/')) {
+            throw new IllegalArgumentException("[ERROR] 사칙연산 기호는 +, -, *, / 중 하나를 입력해야 합니다.");
         }
+
+        return operator;
     }
 }
