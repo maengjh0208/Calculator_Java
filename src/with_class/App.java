@@ -56,8 +56,6 @@ public class App {
 
         } catch (NumberFormatException e) {
             throw new NumberFormatException("[ERROR] 정수가 아닌 값을 입력했습니다.");
-        } catch (Exception e) {
-            throw new Exception("[ERROR] validateNum 메서드에서 발생: " + e.getMessage());
         }
     }
 
@@ -72,10 +70,8 @@ public class App {
 
             return operator;
 
-        }  catch (InputMismatchException e) {
+        } catch (InputMismatchException e) {
             throw new InputMismatchException("[ERROR] 맞지 않는 형식으로 입력했습니다. (char type 입력 필요)");
-        } catch (Exception e) {
-            throw new Exception("[ERROR] validateChar 메서드에서 발생: " + e.getMessage());
         }
     }
 }
