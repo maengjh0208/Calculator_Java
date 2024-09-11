@@ -42,7 +42,7 @@ public class App {
         System.out.println();
 
         // 람다, 스트림 테스트 (N보다 큰 숫자만 조회)
-        List<Double> results2 = calculator.getGoeList(3.0);
+        List<Double> results2 = calculator.getGoeList(3);
         System.out.println(results2);
     }
 

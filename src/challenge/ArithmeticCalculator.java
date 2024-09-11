@@ -40,7 +40,7 @@ public class ArithmeticCalculator<T extends Number> {
         this.results.add(num);
     }
 
-    public List<Double> getGoeList(Double targetNum) {
+    public List<Double> getGoeList(double targetNum) {
         return this.results.stream()
                 .filter(result -> result > targetNum)
                 .collect(Collectors.toList());
