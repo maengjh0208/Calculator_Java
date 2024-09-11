@@ -17,6 +17,10 @@ public class Calculator {
         } else if (operator == '*') {
             answer = num1 * num2;
         } else if (operator == '/') {
+            if (num2 == 0) {
+                throw new ArithmeticException("0 으로 나눌 수 없습니다.");
+            }
+
             answer = (double) num1 / num2;
         }
 

@@ -39,7 +39,6 @@ public class App {
                 System.out.println(e.getMessage() + "\n");
             }
         }
-//        System.out.println(calculator.removeFirstResult());
     }
 
     public int validateNum(BufferedReader reader, int idx) throws Exception {
