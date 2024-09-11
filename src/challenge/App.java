@@ -2,6 +2,7 @@ package challenge;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
@@ -32,6 +33,17 @@ public class App {
                 System.out.println(e.getMessage() + "\n");
             }
         }
+
+        List<Double> results = calculator.getResults();
+        for (Double result : results) {
+            System.out.print(result + " ");
+        }
+
+        System.out.println();
+
+        // 람다, 스트림 테스트 (N보다 큰 숫자만 조회)
+        List<Double> results2 = calculator.getGoeList(3.0);
+        System.out.println(results2);
     }
 
     public double validateDouble(BufferedReader br, int idx) throws Exception {

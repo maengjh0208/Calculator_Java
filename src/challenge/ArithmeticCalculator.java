@@ -2,8 +2,12 @@ package challenge;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ArithmeticCalculator<T extends Number> {
+    private final List<Double> results = new ArrayList<>();
 
     public double operate(char operator, T num1, T num2) {
         OperatorType type = OperatorType.getOperatorType(operator);
@@ -23,6 +27,22 @@ public class ArithmeticCalculator<T extends Number> {
             result = num1.doubleValue() / num2.doubleValue();
         }
 
+        this.results.add(result);
+
         return result;
+    }
+
+    public List<Double> getResults() {
+        return this.results;
+    }
+
+    public void setResults(double num) {
+        this.results.add(num);
+    }
+
+    public List<Double> getGoeList(Double targetNum) {
+        return this.results.stream()
+                .filter(result -> result > targetNum)
+                .collect(Collectors.toList());
     }
 }
