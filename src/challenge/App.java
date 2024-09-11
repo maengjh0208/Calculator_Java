@@ -7,7 +7,7 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        ArithmeticCalculator<Double> calculator = new ArithmeticCalculator();
+        ArithmeticCalculator<Double> calculator = new ArithmeticCalculator<>();
         App app = new App();
 
         while (true) {
